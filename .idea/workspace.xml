@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5466f8e9-9570-47ef-9b42-8701043b4249" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +18,7 @@
     <session id="1259477198">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -30,27 +27,27 @@
         <counts>
           <entry key="config" value="1" />
           <entry key="js" value="1" />
-          <entry key="php" value="29" />
+          <entry key="php" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Blade" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="28" />
+          <entry key="PHP" value="29" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="5" />
-          <entry key="php" value="129" />
+          <entry key="php" value="152" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="5" />
-          <entry key="PHP" value="129" />
+          <entry key="PHP" value="152" />
         </counts>
       </usages-collector>
     </session>
@@ -78,10 +75,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="41">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="e#41#54#0#PHP" expanded="true" />
+                <element signature="e#41#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+              <folding>
+                <element signature="e#23#69#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,6 +152,7 @@
         <option value="$PROJECT_DIR$/config/admin.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Admin/routes.php" />
+        <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/app/Admin/Controllers/UserController.php" />
       </list>
     </option>
@@ -256,10 +266,10 @@
       <path value="$PROJECT_DIR$/vendor/encore/laravel-admin" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="709" />
+    <option name="height" value="747" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -292,6 +302,12 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
@@ -334,16 +350,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576135067903</updated>
-      <workItem from="1576135069608" duration="5521000" />
+      <workItem from="1576135069608" duration="6061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5521000" />
+    <option name="totallyTimeSpent" value="6061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="747" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -508,12 +523,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding>
+            <element signature="e#23#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="41">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <element signature="e#41#54#0#PHP" expanded="true" />
+            <element signature="e#41#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
