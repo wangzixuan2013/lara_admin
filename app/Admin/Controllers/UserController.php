@@ -82,10 +82,12 @@ class UserController extends AdminController
 //        $form->setAction('admin/users');
 
 
-        $form->deleted(function (Form $form){
-//            return $form;
-            var_dump($form);exit;
-        });
+//        $form->destroy(function (Form $form){
+//            var_dump($form);exit;
+//        });
+//        $form->deleted(function (Form $form){
+//            var_dump($form);exit;
+//        });
 
 //        //保存后回调
 //        $form->saved(function (Form $form) {
@@ -100,9 +102,22 @@ class UserController extends AdminController
         return $form;
     }
 
+    public function destroy($id)
+    {
+
+//        parent::destroy($id);
+        var_dump($id);exit;
+//        $this->authorize('destroy', $topic);
+//        $topic->delete();
+//
+//        return redirect()->route('topics.index')->with('success', '成功删除！');
+    }
+
 //    public function create(Content $content)
 //    {
 //        return $content;
 //        var_dump($content);exit;
 //    }
+
+
 }
