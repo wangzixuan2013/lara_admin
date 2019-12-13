@@ -71,10 +71,38 @@ class UserController extends AdminController
 
         $form->text('name', __('Name'));
         $form->email('email', __('Email'));
-        $form->datetime('email_verified_at', __('Email verified at'))->default(date('Y-m-d H:i:s'));
-        $form->password('password', __('Password'));
-        $form->text('remember_token', __('Remember token'));
+//        $form->datetime('email_verified_at', __('Email verified at'))->default(date('Y-m-d H:i:s'));
+//        $form->password('password', __('Password'));
+//        $form->text('remember_token', __('Remember token'));
+        $form->text('profile.age');
+        $form->text('profile.gender');
+
+        $form->datetime('created_at');
+        $form->datetime('updated_at');
+//        $form->setAction('admin/users');
+
+
+        $form->deleted(function (Form $form){
+//            return $form;
+            var_dump($form);exit;
+        });
+
+//        //保存后回调
+//        $form->saved(function (Form $form) {
+//            var_dump($form);exit;
+//        });
+
+//        $form->deleted(function () {
+//            throw new \Exception('hahaa');
+//        });
+
 
         return $form;
     }
+
+//    public function create(Content $content)
+//    {
+//        return $content;
+//        var_dump($content);exit;
+//    }
 }
