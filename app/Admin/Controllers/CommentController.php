@@ -28,6 +28,8 @@ class CommentController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('topic_id', __('Topic id'));
+        $grid->column('user_id', __('User id'));
+        $grid->column('user.name', __('User name'));
         $grid->column('content', __('Content'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
@@ -63,6 +65,7 @@ class CommentController extends AdminController
     {
         $form = new Form(new Comment);
 
+        $form->number('user_id', __('User id'));
         $form->number('topic_id', __('Topic id'));
         $form->text('content', __('Content'));
 

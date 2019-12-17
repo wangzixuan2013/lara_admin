@@ -68,4 +68,14 @@ class User extends Authenticatable
         });
     }
 
+    public function topic()
+    {
+        return $this->hasMany(Topic::class);
+    }
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

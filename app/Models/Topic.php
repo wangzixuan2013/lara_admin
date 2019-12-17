@@ -24,4 +24,33 @@ class Topic extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function ($model){
+            /**
+             * 这里可以处理相应的业务
+             * 例如：权限检查
+             */
+//            $data = Profile::where('user_id',$model->id)->get();
+
+//            var_dump($data);exit;
+        });
+
+        static::deleted(function ($model){
+
+            /**
+             * 这里可以处理相应的业务
+             * 例如：关联数据删除
+             */
+            return Comment::where('topic_id','=',$model->id)->delete();
+
+        });
+    }
+
 }

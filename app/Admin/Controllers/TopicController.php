@@ -28,10 +28,17 @@ class TopicController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('user_id', __('User id'));
+        $grid->column('user.name','User name');
         $grid->column('title', __('Title'));
         $grid->column('content', __('Content'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+        $grid->column('comment', '评论数')->display(function ($comment) {
+
+//            var_dump($comments);exit;
+            $count = count($comment);
+            return "<span class='label label-warning'>{$count}</span>";
+        });
 
         return $grid;
     }

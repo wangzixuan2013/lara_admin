@@ -29,11 +29,13 @@ class UserController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
-        $grid->column('email_verified_at', __('Email verified at'));
-        $grid->column('password', __('Password'));
-        $grid->column('remember_token', __('Remember token'));
+//        $grid->column('email_verified_at', __('Email verified at'));
+//        $grid->column('password', __('Password'));
+//        $grid->column('remember_token', __('Remember token'));
         $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+//        $grid->column('updated_at', __('Updated at'));
+        $grid->column('profile.age','age');
+        $grid->column('profile.gender','gender');
 
         return $grid;
     }
@@ -67,6 +69,7 @@ class UserController extends AdminController
      */
     protected function form()
     {
+
         $form = new Form(new User);
 
         $form->text('name', __('Name'));
