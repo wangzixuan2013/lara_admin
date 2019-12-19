@@ -26,9 +26,13 @@ class MovieController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Movie);
+//        $grid->fixColumns(3);
 
         $grid->column('id', __('Id'))->sortable();
-        $grid->column('title', __('名称'));
+        /**
+         * 设置表头帮助信息 help
+         */
+        $grid->column('title', __('名称'))->help('这一列是...');
 //        $grid->column('director', __('Director'));
 
         $grid->column('director')->display(function ($userId){
@@ -42,6 +46,9 @@ class MovieController extends AdminController
         $grid->column('describe', __('Describe'));
         $grid->column('rate', __('Rate'));
         $grid->column('release_at', __('Release at'));
+        /**
+         * 列的排序
+         */
         $grid->column('created_at', __('Created at'))->sortable();
         $grid->column('updated_at', __('Updated at'));
 
