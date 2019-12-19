@@ -35,7 +35,9 @@ class UserController extends AdminController
         $grid->column('created_at', __('Created at'));
 //        $grid->column('updated_at', __('Updated at'));
         $grid->column('profile.age','age');
-        $grid->column('profile.gender','gender');
+//        $grid->column('profile.gender','gender');
+
+        $grid->column('profile.gender')->using(['fmale' => '女', 'male' => '男']);
 
         return $grid;
     }

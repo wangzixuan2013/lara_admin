@@ -2,11 +2,13 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Post\Replicate;
 use App\Models\Movie;
 use App\Models\User;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
+use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
 class MovieController extends AdminController
@@ -30,9 +32,11 @@ class MovieController extends AdminController
 
         $grid->column('id', __('Id'))->sortable();
         /**
-         * 设置表头帮助信息 help
+         * 1、设置表头帮助信息 help
+         * 2、title在行中编辑
+         * 3、editable
          */
-        $grid->column('title', __('名称'))->help('这一列是...');
+        $grid->column('title', __('名称'))->help('这一列是...')->editable();
 //        $grid->column('director', __('Director'));
 
         $grid->column('director')->display(function ($userId){
@@ -50,7 +54,7 @@ class MovieController extends AdminController
          * 列的排序
          */
         $grid->column('created_at', __('Created at'))->sortable();
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('updated_at', __('Updated at'))->editable('datetime');
 
         $grid->filter(function ($filter){
             $filter->between('created_at','Created Time')->datetime();
@@ -60,6 +64,10 @@ class MovieController extends AdminController
 //        $grid->column('1111')->display(function () {
 //            return 'blablabla....';
 //        });
+
+        $grid->actions(function ($actions){
+            $actions->add(new Replicate);
+        });
 
         //禁用行选择器
         $grid->disableColumnSelector();
@@ -105,8 +113,11 @@ class MovieController extends AdminController
         $form->switch('rate', __('Rate'));
         $form->datetime('release_at', __('Release at'))->default(date('Y-m-d H:i:s'));
         $form->datetime('created_at', __('Created at'))->default(date('Y-m-d H:i:s'));
+        $form->datetime('updated_at', __('Updated at'))->default(date('Y-m-d H:i:s'));
         $form->switch('released', __('Released'));
 
         return $form;
     }
+
+
 }
