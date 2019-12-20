@@ -7,6 +7,8 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Encore\Admin\Widgets\Box;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends AdminController
 {
@@ -38,6 +40,20 @@ class UserController extends AdminController
 //        $grid->column('profile.gender','gender');
 
         $grid->column('profile.gender')->using(['fmale' => '女', 'male' => '男']);
+
+        /**
+         * 头部显示chart图表
+         */
+        $grid->header(function () {
+            $gender = DB::table('profiles')->select(DB::raw('count(gender) as count, gender'))
+                ->groupBy('gender')->get()->pluck('count', 'gender')->toArray();
+
+            $gender['un_know'] = 0;
+
+            $doughnut = view('admin.chart.gender', compact('gender'));
+
+            return new Box('性别比例', $doughnut);
+        });
 
         return $grid;
     }
