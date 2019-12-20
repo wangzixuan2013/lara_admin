@@ -109,6 +109,10 @@ class UserController extends AdminController
 
         $form->isEditing();
 
+//        $form->deleting();
+
+//        $form->text('title')->creationRules('required|min:3');
+
 
 //        $form->destroy(function (Form $form){
 //            var_dump($form);exit;
@@ -125,6 +129,9 @@ class UserController extends AdminController
 //        $form->deleted(function () {
 //            throw new \Exception('hahaa');
 //        });
+
+//        $form->select('name','bar')->options([1 => 'foo', 2 => 'bar', 'val' => 'Option name']);
+
 
 
         return $form;
