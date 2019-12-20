@@ -69,9 +69,6 @@ class MovieController extends AdminController
             $actions->add(new Replicate);
         });
 
-        //禁用行选择器
-        $grid->disableColumnSelector();
-
         return $grid;
     }
 

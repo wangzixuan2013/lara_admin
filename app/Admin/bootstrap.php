@@ -18,4 +18,13 @@
  *
  */
 
+use Encore\Admin\Grid;
+
 Encore\Admin\Form::forget(['map', 'editor']);
+
+Grid::init(function (Grid $grid) {
+
+    //禁用行选择器
+    $grid->disableColumnSelector();
+
+});

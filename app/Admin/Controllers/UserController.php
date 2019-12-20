@@ -55,6 +55,11 @@ class UserController extends AdminController
             return new Box('性别比例', $doughnut);
         });
 
+        /**
+         * 快捷搜索
+         */
+        $grid->quickSearch('name');
+
         return $grid;
     }
 
@@ -101,6 +106,8 @@ class UserController extends AdminController
         $form->datetime('created_at');
         $form->datetime('updated_at');
 //        $form->setAction('admin/users');
+
+        $form->isEditing();
 
 
 //        $form->destroy(function (Form $form){
